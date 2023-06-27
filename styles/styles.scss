@@ -16,6 +16,10 @@ body{
 .main-header{
     width: 100%;
     background-color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 
     .container{
         display: flex;
@@ -91,7 +95,7 @@ body{
 
 .main-content{
     width: 100%;
-    min-height: calc(100vh - 90px);
+    min-height: 100vh;
     display: flex;
     background-image: url(../img/newsiterobot_nofont.jpg);
     background-size: cover;
@@ -367,6 +371,14 @@ body{
 
 */
 
+body{
+    position: relative;
+}
+
+*{
+    scroll-padding-top: 100px;
+}
+
 .main-content .arrow{
     display: none;
 }
@@ -377,7 +389,7 @@ body{
     width: 100%;
     color: white;
     padding: 20px;
-    margin: 0 20px;
+    margin: 0 20px 60px;
 
     h2{
         font-size: 24px;
@@ -410,7 +422,28 @@ body{
         }
     }
 }
+
+.menu-mobile-toggle{
+    display: none;
+    margin-left: auto;
+
+    span{
+        font-size: 35px;
+          background: linear-gradient(45deg, #bf02bf, #360136);
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+}
+
+.menu-mobile{
+    .main-menu, .social-menu{
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1280px){
+
     .main-content .announcement-section{
         position: inherit;
         left: inherit;
@@ -434,8 +467,63 @@ body{
 @media screen and (max-width: 880px){
 
     .main-header{
+        position: fixed;
+
         .main-menu, .social-menu{
             display: none;
+        }
+
+        .menu-mobile-toggle{
+            display: block;
+            cursor: pointer;
+        }
+
+        .menu-mobile{
+            display: flex;
+            position: fixed;
+            top: 79px;
+            width: 100%;
+            height: calc(100vh - 79px);
+            background: #f1f1f1;
+            z-index: 100;
+            left: 0;
+            flex-direction: column;
+            justify-content: space-between;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+
+            &.active{
+                max-height: calc(100vh - 79px);
+                transition: max-height 0.3s ease-in;
+                padding-bottom: 50px;
+            }
+            
+            .main-menu{
+                display: block;
+
+                li{
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 20px;
+
+                    a{
+                        font-size: 20px;
+                    }
+                }
+            }
+             .social-menu{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0;
+
+                li{
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                }
+             }
         }
     }
 

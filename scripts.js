@@ -8,3 +8,7 @@ $('.about-img').slick({
     adaptiveHeight: true,
     autoplay: true
   });
+
+  document.querySelector('.mobile-toggle').addEventListener('click', function() {
+    document.querySelector('.menu-mobile').classList.toggle('active');
+  });
