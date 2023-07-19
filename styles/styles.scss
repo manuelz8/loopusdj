@@ -25,8 +25,7 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0;
-        margin: 0 20px;
+        padding: 20px;
     }
 
     .main-menu{
@@ -40,6 +39,8 @@ body{
             margin-right: 20px;
             position: relative;
             transition: ease 0.3s;
+            display: flex;
+            align-items: center;
 
             
             &:hover{
@@ -314,6 +315,7 @@ body{
             margin: 0 auto;
             display: flex;
             align-items: center;
+            min-height: 400px;
             
             &-item{
                 display: flex;
@@ -379,6 +381,17 @@ body{
     scroll-padding-top: 100px;
 }
 
+.mobile-heading{
+    font-size: 25px;
+    margin: 0;
+    background: linear-gradient(45deg, #bf02bf, #360136);
+    background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: none;
+}
+
 .main-content .arrow{
     display: none;
 }
@@ -437,6 +450,7 @@ body{
 }
 
 .menu-mobile{
+    display: none;
     .main-menu, .social-menu{
         display: none;
     }
@@ -463,6 +477,8 @@ body{
         }
     }
 }
+
+
 
 @media screen and (max-width: 880px){
 
@@ -548,12 +564,16 @@ body{
             }
         }
     }
+
+    .mobile-heading{
+        display: block;
+    }
 }
 
 
 @media screen and (max-width: 500px){
     .main-content{
-        background-position: right;
+        background-position: 85%;
 
         .announcement-section{
             h1{
