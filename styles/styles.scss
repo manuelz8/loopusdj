@@ -586,3 +586,43 @@ body{
         }
     }
 }
+
+.main-content{
+    .announcement-section{
+        display: none;
+    
+        &.new-album{
+            display: flex;
+            font-family: 'Roboto', sans-serif;
+            padding: 40px 20px;
+            top: calc(50% - 283px);
+        
+            
+            h1{
+                color: #F2CF66;
+            }
+            h2{
+                color: #f1f1f1;
+                font-size: 50px;
+                margin-top: 0;
+                text-transform: uppercase;
+            }
+
+            .new-album-cover{
+                max-width: 300px;
+                width: 100%;
+                
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    .main-content .announcement-section.new-album{
+        top: 0;
+    }
+}
