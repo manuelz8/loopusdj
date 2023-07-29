@@ -132,7 +132,8 @@ body {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  animation: floating-arrow 3s ease-in-out infinite;
+  -webkit-animation: floating-arrow 3s ease-in-out infinite;
+          animation: floating-arrow 3s ease-in-out infinite;
   color: white;
   background-color: rgba(0, 0, 0, 0.6196078431);
   border-radius: 50%;
@@ -140,6 +141,18 @@ body {
 .arrow span {
   font-weight: bold;
   font-size: 60px;
+}
+
+@-webkit-keyframes floating-arrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes floating-arrow {
@@ -508,6 +521,9 @@ body {
 .main-content .announcement-section {
   display: none;
 }
+.main-content .announcement-section.music {
+  display: flex;
+}
 .main-content .announcement-section.new-album {
   display: flex;
   font-family: "Roboto", sans-serif;
@@ -529,4 +545,10 @@ body {
 }
 .main-content .announcement-section.new-album .new-album-cover img {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .main-content .announcement-section.new-album {
+    top: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */

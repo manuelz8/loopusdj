@@ -590,6 +590,10 @@ body{
 .main-content{
     .announcement-section{
         display: none;
+
+        &.music{
+            display: flex;
+        }
     
         &.new-album{
             display: flex;
@@ -626,3 +630,5 @@ body{
         top: 0;
     }
 }
+
+
